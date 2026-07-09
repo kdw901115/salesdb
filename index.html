@@ -318,6 +318,21 @@ const QUESTIONS = [
     hint: '상담 연결 및 결과 전달을 위해 필요합니다',
     type: 'bizinfo',
   },
+  {
+    id: 'receiver',
+    step: '접수자',
+    text: '접수자를 선택해 주세요',
+    hint: '이 상담을 접수하는 담당자를 선택합니다',
+    type: 'choice',
+    choices: [
+      { icon: '👤', label: '김은정', sub: '', value: '김은정' },
+      { icon: '👤', label: '이나경', sub: '', value: '이나경' },
+      { icon: '👤', label: '이윤임', sub: '', value: '이윤임' },
+      { icon: '👤', label: '이준희', sub: '', value: '이준희' },
+      { icon: '👤', label: '최미경', sub: '', value: '최미경' },
+      { icon: '👤', label: '문옥순', sub: '', value: '문옥순' },
+    ]
+  },
 ];
 
 // ── 상태 ──────────────────────────────
@@ -476,7 +491,8 @@ async function submitFinal() {
     creditScore: getAnswerLabel('creditScore'),
     taxOk:       getAnswerLabel('taxOk'),
     rehab:       getAnswerLabel('rehab'),
-    reqAmount:   getAnswerLabel('reqAmount') || '미입력'
+    reqAmount:   getAnswerLabel('reqAmount') || '미입력',
+    receiver:    getAnswerLabel('receiver')
   };
 
   try {
